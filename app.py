@@ -67,7 +67,7 @@ pred_data.loc[0,'City_Code_Patient']=user_input
 user_input=st.text_input(' Type of Admission')
 pred_data.loc[0,' Type of Admission']=user_input
 
-user_input=st.number_input(' Severity of Illness')
+user_input=st.text_input(' Severity of Illness')
 pred_data.loc[0,' Severity of Illness']=user_input
 
 user_input=st.number_input(' Visitors with Patient')
