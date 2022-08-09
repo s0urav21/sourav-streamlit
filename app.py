@@ -9,7 +9,7 @@ st.title('Hospital Stay Prediction')
 st.write('Predict if the patient will stay based on user input')
 
 
-data=pd.read_csv('Validation_data.csv')
+data=pd.read_csv('validation_data.csv')
 st.write(data)
 data=data.drop(['Unnamed: 0'], axis=1)
 data=data.drop(columns=['case_id','patientid'])
