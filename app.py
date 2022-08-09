@@ -1,6 +1,6 @@
 import pandas as pd 
 import numpy as np 
-import matplotlib.pyplot as plt
+
 import pickle
 
 import streamlit as st 
@@ -9,7 +9,7 @@ st.title('Hospital Stay Prediction')
 st.write('Predict if the patient will stay based on user input')
 
 
-data=pd.read_csv('C:/Users/RAJKUMAR/Downloads/Validation_data.csv')
+data=pd.read_csv('Validation_data.csv')
 st.write(data)
 data=data.drop(['Unnamed: 0'], axis=1)
 data=data.drop(columns=['case_id','patientid'])
@@ -37,7 +37,7 @@ pred_data.loc[0,'Age']=user_input
 
 
 
-model=pickle.load(open('C:/Users/RAJKUMAR/Downloads/catboost1.pkl', 'rb'))
+model=pickle.load(open('catboost1.pkl', 'rb'))
 if st.button('Submit'):
 	pred_data['pred']=model.predict(pred_data)
 	pred=pred_data.loc[0,'pred']
